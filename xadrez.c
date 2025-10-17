@@ -19,8 +19,8 @@ scanf("%d", &peca);
 printf("\n");
 	
 //Para melhorar e o jogador mover as peças de forma individual, pensei em utilizar os ensinamentos do modulo anteior
-// e usar uma switch para o jogador escolher qual seria a peça, além disso consegui usar o for, pois achei o ideal para realizar essa
-// operação curta.
+// e usar uma switch para o jogador escolher qual seria a peça, além disso consegui usar o for, pois achei o ideal para realizar esse
+// codigo.
 switch(peca) {
 			case 1:
 			printf("Voce escolheu a torre \n");
