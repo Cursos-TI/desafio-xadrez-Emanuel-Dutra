@@ -1,12 +1,13 @@
 #include <stdio.h>
 
-//função para realizar a recursividade
+//função para realizar a recursividade, a lógica que pensei era que deveria se repetir toda vez até que o numero seja igual
+// a 0 ou menor, então o return vai parar todo o comando.
 void moverTorre(int casas){
 	if (casas <= 0){
 		return;
 	}
 		printf("Direita\n");
-		moverTorre(casas - 1);
+		moverTorre(casas - 1); //Cada vez que ele for chamado, irá diminuir seu valor em -1.
 }
 
 
@@ -57,6 +58,8 @@ scanf("%d", &peca);
 printf("\n");
 	
 //Aqui foi bem simples, cada case do switch volta e puxa as informações colocada no void.
+//Também vai acontecer todo resultado do código, por exemplo ele volta o moverTorre e chama o resultado(5) que é
+//O numero de casas que a peça possui, depois disso ele vai diminuir em -1 esse valor
 
 switch(peca) {
 			case 1:
