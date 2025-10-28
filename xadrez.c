@@ -1,9 +1,45 @@
 #include <stdio.h>
 
+//função para realizar a recursividade
+void moverTorre(int casas){
+	if (casas <= 0){
+		return;
+	}
+		printf("Direita\n");
+		moverTorre(casas - 1);
+}
+
+
+void moverRainha(int casas){
+	if (casas <= 0){
+		return;
+	}
+		printf("Esquerda\n");
+		moverRainha(casas - 1);
+}
+
+void moverBispo(int casas){
+	if (casas <= 0){
+		return;
+	}
+	for (int i = 0; i < casas; i++)
+	{
+		printf("Cima\n");
+		printf("Direita\n");
+	}
+			
+}	
+
+
+
+
+
 int main() {
    //aqui eu defini um valor para peça especifica e seu numero de casas.
 int peca;
-int casaT, casaB, casaR;
+int casaT = 5;
+int casaB = 5;
+int casaR = 8;
 int casaC = 1; // esse ficou separado para facilitar no processo do decremento.
 
 printf("#########################\n");
@@ -20,38 +56,30 @@ printf("Cavalo (digite 4).\n");
 scanf("%d", &peca);
 printf("\n");
 	
-//Para melhorar e o jogador mover as peças de forma individual, pensei em utilizar os ensinamentos do modulo anteior
-// e usar uma switch para o jogador escolher qual seria a peça, além disso consegui usar o for, pois achei o ideal para realizar esse codigo.
+//Aqui foi bem simples, cada case do switch volta e puxa as informações colocada no void.
 
 switch(peca) {
 			case 1:
 			printf("Voce escolheu a torre \n");
-				for (int casaT = 0; casaT < 5; casaT++) {
-					printf("Direita\n");
-				}
+				moverTorre(casaT);
 
 				break;
 
 			case 2:
 			printf("Voce escolheu o bispo \n");
-				for (int casaB = 0; casaB < 5; casaB++) {
-					printf("Cima\n");
-					printf("Direita\n");
-				}
+				moverBispo(casaB);
 
 				break;
 
 			case 3:
 			printf("Voce escolheu a rainha \n");
-				for (int casaR = 0; casaR < 8; casaR++) {
-					printf("Esquerda\n");
-				}
+				moverRainha(casaR);
 
 				break;
 
 			case 4:
-				printf("Voce escolheu o cavalo \n"); //parte que mencionei antes, que o valor de i é 0 e ele vai repetir a frase cima até se tornar 2
-					while (casaC--) // então só depois vai executar o comando de while que é decrementar o valor 1 para 0, sendo assim só terá uma repetição
+				printf("Voce escolheu o cavalo \n");
+					while (casaC--)
 						for (int i = 0; i < 2; ++i)
 						{
 							printf("cima\n");
@@ -61,8 +89,8 @@ switch(peca) {
 				break;
 
 				default:
-				printf("Opcao invalida!\n");
-				break;
+					printf("Opcao invalida!\n");
+					break;
 
 	}
 		
